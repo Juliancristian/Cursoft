@@ -12,9 +12,9 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (min-height: 800px) {
+@media (min-height: 730px) {
   .header-blue{
-    padding-bottom: 150px;
+    padding-bottom: 107px;
   }
 }
 /* ******************* */
@@ -270,11 +270,12 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	#contenedor-formulario-curso {
 		background-color: #E1E1E1; /* GRIS*/
 		padding: 15px 35px;
 		margin-top: 22px;
+		margin-bottom: 27px;
 		border-radius: 5px;
 	}
 }
@@ -286,10 +287,10 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	#contenedor-form-registrateOk {
 		margin-top: 10px;
-		margin-bottom: 14px;
+		margin-bottom: 41px;
 	}
 }
 
@@ -316,10 +317,10 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	#contenedor-formaPago {
 		margin-top: 20px;
-		margin-bottom: 31px;
+		margin-bottom: 58px;
 	}
 }
 
@@ -329,10 +330,10 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	#contenedor-finInscripcion {
 		margin-top: 20px;
-		margin-bottom: 181px;
+		margin-bottom: 208px;
 	}
 }
 
@@ -351,9 +352,9 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	.margin-curso-salir {
-		margin-bottom: 123px;
+		margin-bottom: 150px;
 	}
 }
 
@@ -362,9 +363,9 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	.margin-curso-salirOk {
-		margin-bottom: 51px;
+		margin-bottom: 78px;
 	}
 }
 
@@ -373,9 +374,9 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	.margin-cata-salir {
-		margin-bottom: 123px;
+		margin-bottom: 150px;
 	}
 }
 
@@ -384,9 +385,9 @@
 }
 
 /* PANTALLA MAS GRANDE */
-@media (max-width:767px) {
+@media (max-width:730px) {
 	.margin-cata-salirOk, .margin-profesor-salirOk {
-		margin-bottom: 51px;
+		margin-bottom: 78px;
 	}
 }
 
