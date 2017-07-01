@@ -1,0 +1,193 @@
+img.imagen-calendario{
+ 	width: 35px;
+ 	height: 30px;	
+ 	vertical-align: middle;
+ 	cursor: pointer;
+}
+ 
+ /* CSS CALENDARIO */
+div.calendar{
+    position: relative
+}
+
+.calendar{
+    font-size: 11pt;
+    font-family: sans-serif;
+    color: #000;
+    background-color: #ddd;
+    border: 2px solid rgba(0, 0, 0, 0.2); /*negro*/
+    cursor: default;
+}
+
+.calendar table{
+    font-size: 10pt;
+    font-family: sans-serif;
+    color: #000;
+    background-color: #FFF;    
+}
+
+/*cabecera Hoy*/
+.calendar .button{
+    font-size: 90%;
+    text-align: center;
+    color: #FFF;
+    background-color: #FA4119; /* Fondo rojo */
+    padding: 5px;
+}
+
+/*iconos selectores*/
+.calendar .nav{
+    background: url(menuarrow.gif) #FA4119 no-repeat 100% 100%
+}
+
+.calendar thead .title{
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #FA4119; /* Fondo rojo */
+    padding: 5px;
+}
+
+.calendar thead .headrow{
+}
+
+.calendar thead .name{
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    padding: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /*negro*/
+}
+
+/*Letras fin de semana*/
+.calendar thead .weekend{
+    color: #FA4119; /*rojo*/
+}
+
+.calendar thead .hilite{
+    padding: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.2); /*negro*/
+}
+
+/*Hacer click sobre los selectores*/
+.calendar thead .active{
+    padding: 2px 2px 0px 0px;
+    opacity: 0.8;
+}
+
+.calendar thead .daynames{
+    background-color: #ddd;
+}
+
+.calendar tbody .day{
+    width: 2em;
+    text-align: center;
+    color: #000;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.calendar tbody .othermonth{
+    font-size: 80%;
+}
+
+.calendar tbody .oweekend{
+    color: #ddd;
+}
+
+/*Lateral izquierda calendario*/
+.calendar table .wn{
+    padding: 2px;
+    background-color: #ddd;
+}
+
+/*Marcar al pasar el mouse sobre los dias*/
+.calendar tbody td.hilite{
+    background-color: #FBB2A2; /*rojo*/
+    padding: 1px;
+    border: 1px solid #FA4119; /*rojo*/
+}
+
+/*Al hacer click sobre el dia seleccionado*/
+.calendar tbody td.active{
+    color: #FFF;
+    background-color: #FA4119; /*rojo*/
+    padding: 1px;
+}
+
+/*Dias fin de semana*/
+.calendar tbody td.weekend{
+    color: #FA4119; /*rojo*/
+}
+
+/*Dia actual*/
+.calendar tbody td.selected{
+    color: #FFF;
+    background-color: #FA4119; /*rojo*/
+    padding: 1px;
+}
+
+.calendar tbody td.today{  
+    color: #FFF;
+}
+/***    ****/
+
+.calendar tbody .disabled{
+    color: #ddd
+}
+
+.calendar tbody .emptycell{
+    visibility: hidden
+}
+
+.calendar tbody .emptyrow{
+    display: none
+}
+
+.calendar tfoot .footrow{
+    text-align: center;
+    color: #FFF;
+    background-color: #ddd;
+}
+
+/*Pie de calendario*/
+.calendar tfoot .ttip{
+    color: #000;
+    background-color: #ddd; /*gris*/
+    padding: 2px;
+}
+
+.calendar tfoot .hilite{
+    padding: 1px;
+}
+
+.calendar tfoot .active{
+    padding: 2px 0px 0px 2px;
+    background-color: #ddd;
+}
+
+.calendar .combo{
+    width: 4em;
+    font-size: 90%;
+    color: #000;
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: default;
+}
+
+.calendar .combo .label{
+    text-align: center;
+    padding: 1px;
+}
+
+.calendar .combo .label-IEfix{
+    text-align: center;
+    padding: 1px;
+}
+
+.calendar .combo .label-IEfix{
+    width: 4em
+}

@@ -1,0 +1,401 @@
+.header-blue {
+  font-family:'Source Sans Pro', sans-serif;
+  background: linear-gradient(135deg, #172a74, #21a9af);
+  background-color: #184e8e;
+  padding-bottom: 31px;
+}
+
+@media (max-width:767px) {
+  .header-blue{
+    padding-bottom: 80px;
+  }
+}
+
+/* PANTALLA MAS GRANDE */
+@media (min-height: 800px) {
+  .header-blue{
+    padding-bottom: 150px;
+  }
+}
+/* ******************* */
+
+.header-blue .navbar {
+  background: transparent;
+  color: #fff;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+@media (max-width:767px) {
+  .header-blue .navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width:767px) {
+  .header-blue .navbar .navbar-header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width:767px) {
+  .header-blue .navbar .navbar-right {
+    margin-bottom: 20px;
+  }
+}
+
+.header-blue .navbar .navbar-brand {
+  font-weight: bold;
+  color: inherit;
+}
+
+.header-blue .navbar .navbar-brand:hover {
+  color: #f0f0f0;
+}
+
+.header-blue .navbar .navbar-collapse p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.header-blue .navbar .navbar-collapse p .login {
+  color: #d9d9d9;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.header-blue .navbar .navbar-collapse p .login:hover {
+  color: #fff;
+}
+
+.header-blue .navbar .navbar-toggle {
+  border-color:rgba(255,255,255,0.3);
+}
+
+.header-blue .navbar .navbar-toggle:hover, .header-blue .navbar-toggle:focus {
+  background: none;
+}
+
+.header-blue .navbar .navbar-toggle .icon-bar {
+  background-color: #eee;
+}
+
+.header-blue .navbar .navbar-collapse, .header-blue .navbar .navbar-form {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.header-blue .navbar .navbar-nav > .active > a, .header-blue .navbar .navbar-nav > .open > a {
+  background: none;
+  box-shadow: none;
+}
+
+.header-blue .navbar.navbar-default .navbar-nav > .active > a, .header-blue .navbar.navbar-default .navbar-nav > .active > a:focus, .header-blue .navbar.navbar-default .navbar-nav > .active > a:hover{
+  color: rgba(255,255,255,0.3);
+  box-shadow: none;
+  background: none;
+  pointer-events: none;
+}
+
+.header-blue .navbar.navbar .navbar-nav > li > a {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.header-blue .navbar.navbar-default .navbar-nav > li > a {
+  color: #d9d9d9;
+}
+
+.header-blue .navbar.navbar-default .navbar-nav > li > a:focus, .header-blue .navbar.navbar-default .navbar-nav > li > a:hover {
+  color: #fcfeff !important;
+  background-color: transparent;
+}
+
+.header-blue .action-button, .header-blue .action-button:active {
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 20px;
+  color: #ebeff1;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 6px 15px;
+  background: transparent;
+  transition: background-color 0.25s;
+  outline: none;
+}
+
+.activo {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.header-blue .hero{
+  margin-top: 60px;
+}
+
+@media (max-width:767px) {
+  .header-blue .hero{
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+.header-blue .hero h1{
+  color: #fff;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+@media (max-width:991px) {
+  .header-blue .hero h1{
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+}
+
+.header-blue .hero p{
+  color: rgba(255,255,255,0.8);
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+
+/* CONTENEDOR MARGIN */
+.contenedor-margin{
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+/*CABECERA CATALOGO */
+.cabecera-catalogo {
+  color: #fff;
+  font-size: 30px;
+  margin-top: 95px;
+  margin-bottom: 34px;
+  font-weight:300;
+}
+
+/*****************************************************
+			  CSS CATALOGO VER MAS
+*****************************************************/
+.contenedor-imagen {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.precio-curso {
+	background-color: #F99000;
+	color: #fff;
+	font-size: 35px;
+	font-family: "Montserrat", helvetica, arial, sans-serif;
+	font-weight: bold;
+	border: 1px solid #fff;
+	padding: 5px 0;
+	margin: 15px auto;
+}
+
+.descripcion-curso {
+	width: 77%;
+	font-size: 18px;
+	margin-bottom: 60px;
+	padding-bottom: 10px;
+}
+
+/*****************************************************
+			 	CSS LOGIN
+*****************************************************/
+
+.contenedor-login {
+	background-color: #E1E1E1; /* GRIS*/
+	border: 1px solid #899caa;
+	border-radius: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 15px 45px;
+	box-sizing: border-box;
+	justify-content: space-between; /* Para separar con espacio entre elementos*/
+	box-shadow: 1px 1px 8px #000;
+	margin-top: 60px;
+	margin-bottom: 150px;
+}
+
+/*****************************************************
+			 	CSS FORMULARIO
+*****************************************************/
+.cabecera-formulario {
+	padding-bottom: 10px;	
+}
+
+#contenedor-formulario-usuario {
+	background-color: #E1E1E1; /* GRIS*/
+	padding: 15px 40px;
+	margin-top: 10px;
+	margin-bottom: 12px;
+	border-radius: 5px;
+}
+
+.titulo-registrarse {
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+#contenedor-formulario {
+	background-color: #E1E1E1; /* GRIS*/
+	padding: 15px 35px;
+	margin-top: 40px;
+	margin-bottom: 18px;
+	border-radius: 5px;
+}
+
+#contenedor-formulario-profesor {
+	background-color: #E1E1E1; /* GRIS*/
+	padding: 15px 40px;
+	margin-top: 20px;
+	margin-bottom: 22px;
+	border-radius: 5px;
+}
+
+#contenedor-formulario-curso {
+	background-color: #E1E1E1; /* GRIS*/
+	padding: 15px 35px;
+	margin-top: 22px;
+	border-radius: 5px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	#contenedor-formulario-curso {
+		background-color: #E1E1E1; /* GRIS*/
+		padding: 15px 35px;
+		margin-top: 22px;
+		border-radius: 5px;
+	}
+}
+
+/* FORMULARIO REGISTRARSE OK */
+#contenedor-form-registrateOk {
+	margin-top: 10px;
+	margin-bottom: -14px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	#contenedor-form-registrateOk {
+		margin-top: 10px;
+		margin-bottom: 14px;
+	}
+}
+
+/*****************************************************
+			 	CSS TABLA
+*****************************************************/
+.cabecera-tabla {	
+  color: #fff;
+  font-size: 30px;
+}
+
+.contenedor-tabla {	
+	width: 90%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+/*****************************************************
+			 	CSS PANEL
+*****************************************************/
+#contenedor-formaPago {
+	margin-top: 20px;
+	margin-bottom: 31px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	#contenedor-formaPago {
+		margin-top: 20px;
+		margin-bottom: 31px;
+	}
+}
+
+#contenedor-finInscripcion {
+	margin-top: 20px;
+	margin-bottom: 181px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	#contenedor-finInscripcion {
+		margin-top: 20px;
+		margin-bottom: 181px;
+	}
+}
+
+.boton-pagoOnline {
+	margin-top: 70px;
+}
+
+.text-panel {	
+	font-size: 17px;
+	font-weight: bold;
+	color: #21a9af;
+}
+
+.margin-curso-salir {
+	margin-bottom: 123px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	.margin-curso-salir {
+		margin-bottom: 123px;
+	}
+}
+
+.margin-curso-salirOk {
+	margin-bottom: 51px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	.margin-curso-salirOk {
+		margin-bottom: 51px;
+	}
+}
+
+.margin-cata-salir {
+	margin-bottom: 123px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	.margin-cata-salir {
+		margin-bottom: 123px;
+	}
+}
+
+.margin-cata-salirOk, .margin-profesor-salirOk {
+	margin-bottom: 51px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:767px) {
+	.margin-cata-salirOk, .margin-profesor-salirOk {
+		margin-bottom: 51px;
+	}
+}
+
+/*****************************************************
+			 	CSS FOOTER
+*****************************************************/
+footer {
+	padding: 15px;
+	border-top: 1px solid #eee; /* borde gris */
+	position: relative;
+	clear: both;
+}

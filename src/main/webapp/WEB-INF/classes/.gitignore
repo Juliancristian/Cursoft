@@ -1,0 +1,7 @@
+/applicationContext.xml
+/ar/
+/hibernateContext.xml
+/log4j.properties
+/spring-servlet.xml
+/test-applicationContext.xml
+/test-hibernateContext.xml
