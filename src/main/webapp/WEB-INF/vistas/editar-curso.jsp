@@ -13,6 +13,7 @@
 	<script src="js/calendar.js"></script>
 	<script src="js/calendar-es.js"></script>
 	<script src="js/calendar-setup.js"></script>
+	<script src="js/validar.js"></script>
 </head>
 <body>
 
@@ -39,27 +40,27 @@
         <!-- CONTENEDOR --> 	    
 		<div class="container">
 	
-		<form:form action="editar-cursoOk" modelAttribute="curso" method="POST">
+		<form:form action="editar-cursoOk" modelAttribute="curso" method="POST" onsubmit="return validarFormCurso()">
 		
 			<!-- CONTENEDOR FORMULARIO COLUMN -->
 			<div id="contenedor-formulario-curso" class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">	
 						
 			<!-- CABECERA -->
-			<h2 class="text-center">Editar</h2>
+			<h2 class="text-center">Editar Curso</h2>
 			
 			<!-- INPUT ID OCULTO -->	
-			<form:input name="id" id="id" type="hidden" path="id" value="${id}" />
+			<form:input type="hidden" name="id" id="id" path="id" value="${id}" />
 			
 			<!-- INPUT CODIGO -->
 			<div class="form-group">	
 				<label for="cod">Código</label>
-				<form:input name="cod" id="cod" class ="form-control" type="text" path="cod" placeholder="Ingresar codigo" value="${cod}" />
+				<form:input type="text" name="cod" id="cod" class ="form-control" path="cod" placeholder="Ingresar codigo" value="${cod}" />
 			</div>		
 			
 			<!-- SELECT CURSO -->
 			<div class="form-group">	
 				<label for="curso">Curso</label>
-				<form:select path="catalogo.id" id="Catalogo" class ="form-control">
+				<form:select path="catalogo.id" id="catalogo" class ="form-control">
 					<option value="${catalogo_id}">${catalogo_nombre}</option>	
 					
 						<!-- LISTA CATALOGO NOMBRE -->				
@@ -72,12 +73,12 @@
 			<!-- SELECT PROFESOR -->
 			<div class="form-group">	
 				<label for="profesor">Profesor</label>
-				<form:select path="profesor.id" id="Profesor" class ="form-control">
-					<option value="${profesor_id}">${profesor_apellido}, ${profesor_nombre}</option>
+				<form:select path="profesor.id" id="profesor" class ="form-control">
+					<option value="${profesor_id}">${profesor_apellido}, ${profesor_nombre} - ${profesor_especialidad}</option>
 					
 					<!-- LISTA CATALOGO NOMBRE -->
 					<c:forEach items="${profesores}" var="p">
-						<option value="${p.id}">${p.apellido}, ${p.nombre}</option>
+						<option value="${p.id}">${p.apellido}, ${p.nombre} - ${p.especialidad}</option>
 					</c:forEach>
 				</form:select>
 			</div>
@@ -89,7 +90,7 @@
 				
 					<!-- COLUMNA -->
 	  				<div class="col-xs-6">
-	    				<form:input type="text" id="ingreso" name="fechaInicio"  path="fechaInicio" placeholder="YYYY-MM-DD" class=" form-control" value="${fechaInicio}" />
+	    				<form:input type="text" id="fechaInicio" name="fechaInicio"  path="fechaInicio" placeholder="YYYY-MM-DD" class=" form-control" value="${fechaInicio}" />
 	  				</div>
 	  				
 	  				<!-- COLUMNA -->
@@ -100,7 +101,7 @@
 						<!-- script que define y configura el calendario--> 
 						<script type="text/javascript"> 
 					 	Calendar.setup({ 
-					  	inputField : "ingreso",  // id del campo de texto 
+					  	inputField : "fechaInicio",  // id del campo de texto 
 					  	ifFormat : "%Y-%m-%d", // formato de la fecha 
 					  	button : "lanzador"  // el id del botón  
 						}); 
@@ -118,14 +119,14 @@
  					<div class="col-xs-6">
  						<!-- INPUT HORA INICIO -->
  						<small>Inicia</small>
-    					<form:input type="text" id="horaInicio" name="horaInicio"  path="horaInicio" placeholder="HH:MM" class=" form-control" value="${horaInicio}" />
+    					<form:input type="text" id="horaInicio" name="horaInicio"  path="horaInicio" placeholder="HH:MM" class=" form-control" value="${horaInicio}" onKeyPress="return FormatoHora(event,this)"/>
   					</div>
   					
   					<!-- COLUMNA -->
   					<div class="col-xs-6">
   						<!-- INPUT HORA FIN -->
   						<small>Finaliza</small>
-    					<form:input type="text" id="horaFin" name="horaFin"  path="horaFin" placeholder="HH:MM" class=" form-control" value="${horaFin}" />
+    					<form:input type="text" id="horaFin" name="horaFin"  path="horaFin" placeholder="HH:MM" class=" form-control" value="${horaFin}" onKeyPress="return FormatoHora(event,this)"/>
   					</div>			
 				</div>
 			</div>

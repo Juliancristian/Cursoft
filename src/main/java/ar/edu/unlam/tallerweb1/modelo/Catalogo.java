@@ -18,6 +18,8 @@ public class Catalogo {
 	private long id;
 	private Integer cod;
 	private String nombre;
+	
+	@Column(name = "descripcion", nullable = false, length = 900)
 	private String descripcion;
 	private String imagen;
 	private String duracion;

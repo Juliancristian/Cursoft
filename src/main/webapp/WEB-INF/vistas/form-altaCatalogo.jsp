@@ -8,6 +8,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" >
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
+	<script type="text/javascript" src="js/validar.js"></script>
 </head>
 <body>
 
@@ -34,24 +35,24 @@
         <!-- CONTENEDOR --> 	    
 		<div class="container">
 	
-			<form:form action="altaCatalogo" modelAttribute="catalogo" method="POST" >
+			<form:form action="altaCatalogo" modelAttribute="catalogo" method="POST" onsubmit="return validarFormCatalogo()">
 			
 			<!-- CONTENEDOR FORMULARIO COLUMN -->
 			<div id="contenedor-formulario" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 			
 			<!-- CABECERA -->
-			<h2 class="text-center">Nuevo</h2>
+			<h2 class="text-center">Alta Catálogo</h2>
 			
 			<!-- INPUT CODIGO -->
 			<div class="form-group">	
 				<label for="cod">Código</label>
-				<form:input name="cod" id="cod" class ="form-control" type="text" path="cod" placeholder="Ingresar codigo" />
+				<form:input type="text" name="cod" id="cod" class ="form-control"  path="cod" placeholder="Ingresar codigo" />
 			</div>
 			
 			<!-- INPUT NOMBRE -->
 			<div class="form-group">	
 				<label for="nombre">Nombre</label>
-				<form:input name="nombre" id="nombre" class ="form-control" type="text" path="nombre" placeholder="Ingresar Nombre" />
+				<form:input type="text" name="nombre" id="nombre" class ="form-control"  path="nombre" placeholder="Ingresar Nombre" />
 			</div>
 			
 			<!-- TEXTAREA DESCRIPCION -->
@@ -63,7 +64,7 @@
 			<!-- INPUT IMAGEN -->
 			<div class="form-group">	
 				<label for="imagen">Imagen</label>
-				<form:input name="imagen" id="imagen" type="file" path="imagen" />
+				<form:input  type="file" name="imagen" id="imagen" path="imagen" />
 			</div>
 			
 			<!-- INPUT DURACION -->
@@ -89,7 +90,7 @@
 			<!-- INPUT PRECIO -->
 			<div class="form-group">	
 				<label for="precio">Precio</label>
-				<form:input name="precio" id="precio" class ="form-control" type="text" path="precio" placeholder="Ingresar Precio" />
+				<form:input type="text" name="precio" id="precio" class ="form-control" path="precio" placeholder="Ingresar Precio" />
 			</div>
 			
 			<!-- BOTON GUARDAR -->

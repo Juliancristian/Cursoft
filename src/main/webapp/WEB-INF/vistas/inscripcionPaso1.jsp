@@ -21,7 +21,6 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                 	<ul class="nav navbar-nav">
 	                    <li role="presentation"><a href="./home-usuario"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-						<li role="presentation"><a href="./contacto"><span class="glyphicon glyphicon-earphone"></span> Contacto</a></li>
                     </ul>
                     <p class="navbar-text navbar-right"><a class="navbar-link login" href="./cerrar-sesion"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesion</a></p>
                 </div>

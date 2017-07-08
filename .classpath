@@ -33,5 +33,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Julian/Desktop/Cursoft/javax.mail.jar"/>
 	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
 </classpath>

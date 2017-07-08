@@ -35,7 +35,7 @@ public class CursoDaolmpl implements CursoDao {
 		return( session.getCurrentSession()
 				.createCriteria(Curso.class)
 				.setFetchMode("Reservas", FetchMode.JOIN)
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY) //ESTAMOS INDICANDO QUE QUEREMOS QUE NOS DEVUELVA SOLO LAS ENTIDADES DIFERENTES DE LA ENTIDAD RAIZ
 				.list());	    
 	}
 	
@@ -46,7 +46,9 @@ public class CursoDaolmpl implements CursoDao {
 		return( session.getCurrentSession()
 				.createCriteria(Curso.class)
 				.add(Restrictions.eq("catalogo", cat))
-				.list());	    
+				.setFetchMode("Reservas", FetchMode.JOIN)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY) //ESTAMOS INDICANDO QUE QUEREMOS QUE NOS DEVUELVA SOLO LAS ENTIDADES DIFERENTES DE LA ENTIDAD RAIZ
+				.list());	    									
 	}
 	
 	//  TRAER UN CURSO

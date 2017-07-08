@@ -40,7 +40,7 @@ public class ControladorInscripcion {
 	@RequestMapping(value="/inscripcion")
 	public ModelAndView listarFechas(@RequestParam("id") Long id, HttpServletRequest request){
 	
-	  if(request.getSession().getAttribute("idSesion") != null && request.getSession().getAttribute("nombreSesion") != null){
+	  if(request.getSession().getAttribute("idSesion") != null){
 		
 		Catalogo catalogo = servicioCatalogo.traerUnCatalogo(id);
 		List<Curso> listaCursos = servicioCurso.traerListaCursos(catalogo);
@@ -63,7 +63,7 @@ public class ControladorInscripcion {
 	public ModelAndView registrarInscripcion(@RequestParam("id_usuario") Long id_usuario ,
 											 @RequestParam("id_curso") Long id, HttpServletRequest request){
 	
-	  if(request.getSession().getAttribute("idSesion") != null && request.getSession().getAttribute("nombreSesion") != null){		
+	  if(request.getSession().getAttribute("idSesion") != null){		
 		
 		Curso curso = servicioCurso.traerUnCurso(id);
 		Usuario usuario = servicioUsuario.traerUnUsuario(id_usuario);
@@ -94,7 +94,7 @@ public class ControladorInscripcion {
 	@RequestMapping(value="/inscripcionPaso3")
 	public ModelAndView finalizarInscripcion(HttpServletRequest request){
 		
-		if(request.getSession().getAttribute("idSesion") != null && request.getSession().getAttribute("nombreSesion") != null){
+		if(request.getSession().getAttribute("idSesion") != null){
 			
 			return new ModelAndView("inscripcionPaso3");
 		}
@@ -106,15 +106,21 @@ public class ControladorInscripcion {
 	
 	// TABLA RESERVAS
 	@RequestMapping("/tabla-reservas")
-	public ModelAndView listarReservas(){
+	public ModelAndView listarReservas(HttpServletRequest request){
+		if(request.getSession().getAttribute("idAdmin") != null){
 		
-		List<Curso> listaCursos = servicioCurso.traerListaCursos();
-		
-		// VISTA EN PANTALLA
-		ModelMap modelo = new ModelMap();
-		
-		modelo.put("cursos", listaCursos);;
-		return new ModelAndView("tabla-reservas", modelo);
+			List<Curso> listaCursos = servicioCurso.traerListaCursos();
+			
+			// VISTA EN PANTALLA
+			ModelMap modelo = new ModelMap();
+			
+			modelo.put("cursos", listaCursos);;
+			return new ModelAndView("tabla-reservas", modelo);
+		}
+		else {
+			
+			return new ModelAndView("redirect:/home");
+		}
 	}
 	
 	
@@ -122,15 +128,21 @@ public class ControladorInscripcion {
 	@RequestMapping("/consultar-reserva")
 	public ModelAndView consultarReserva(@RequestParam("id_curso") Long id, HttpServletRequest request){
 		
+		if(request.getSession().getAttribute("idAdmin") != null){
+
+			Curso curso = servicioCurso.traerUnCurso(id);
 		
-		Curso curso = servicioCurso.traerUnCurso(id);
-	
-		
-		// VISTA EN PANTALLA
-		ModelMap modelo = new ModelMap();
-		
-		modelo.put("inscriptos", curso.getUsuarios());
-		return new ModelAndView("consultar-reserva", modelo);
+			
+			// VISTA EN PANTALLA
+			ModelMap modelo = new ModelMap();
+			
+			modelo.put("inscriptos", curso.getUsuarios());
+			return new ModelAndView("consultar-reserva", modelo);
+		}
+		else {
+			
+			return new ModelAndView("redirect:/home");
+		}
 	}
 
 }

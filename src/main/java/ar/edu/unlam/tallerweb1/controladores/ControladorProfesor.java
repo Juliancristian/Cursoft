@@ -23,41 +23,63 @@ public class ControladorProfesor {
 	@Inject
 	private ServicioProfesor servicioProfesor;
 	
+	
 	// FORM ALTA PROFESOR
 	@RequestMapping("/form-altaProfesor")
-	public String altaProfesor(Profesor profesor, HttpServletRequest request){
+	public ModelAndView altaProfesor(Profesor profesor, HttpServletRequest request){
 		
-		return "form-altaProfesor";		
+		if(request.getSession().getAttribute("idAdmin") != null){
+
+			return new ModelAndView("form-altaProfesor");		
+		}
+		else {
+			
+			return new ModelAndView("redirect:/home");
+		}
 	}
 	
 	// POST ALTA PROFESOR
 	@RequestMapping(path = "/altaProfesor", method = RequestMethod.POST)
 	public ModelAndView altaProfesorOk(@ModelAttribute("profesor") Profesor profesor, HttpServletRequest request){	 
 		
-		// REGISTRA PROFESOR EN LA BD
-		servicioProfesor.registrarProfesor(profesor);
-				
-		// VISTA EN PANTALLA
-		ModelMap modelo = new ModelMap();
+		if(request.getSession().getAttribute("idAdmin") != null){
 		
-		modelo.put("dni", profesor.getDni());
-		modelo.put("nombre", profesor.getNombre());
-		modelo.put("apellido", profesor.getApellido());
-		modelo.put("telefono", profesor.getTelefono());
-		modelo.put("especialidad", profesor.getEspecialidad());		
-		return new ModelAndView("profesor-ok", modelo);	
+			// REGISTRA PROFESOR EN LA BD
+			servicioProfesor.registrarProfesor(profesor);
+					
+			// VISTA EN PANTALLA
+			ModelMap modelo = new ModelMap();
+			
+			modelo.put("dni", profesor.getDni());
+			modelo.put("nombre", profesor.getNombre());
+			modelo.put("apellido", profesor.getApellido());
+			modelo.put("telefono", profesor.getTelefono());
+			modelo.put("especialidad", profesor.getEspecialidad());		
+			return new ModelAndView("profesor-ok", modelo);	
+		}
+		else {
+			
+			return new ModelAndView("redirect:/home");
+		}
 	}
 	
 	// TABLA PROFESOR
 	@RequestMapping("/tabla-profesores")
 	public ModelAndView listarProfesores(HttpServletRequest request){
 		
-		List<Profesor> listaProfesor = servicioProfesor.traerListaProfesor();
+		if(request.getSession().getAttribute("idAdmin") != null){
 		
-		// VISTA EN PANTALLA
-		ModelMap modelo = new ModelMap();	
-
-		modelo.put("profesores", listaProfesor);	
-		return new ModelAndView("tabla-profesores", modelo);
+			List<Profesor> listaProfesor = servicioProfesor.traerListaProfesor();
+			
+			// VISTA EN PANTALLA
+			ModelMap modelo = new ModelMap();	
+	
+			modelo.put("profesores", listaProfesor);	
+			return new ModelAndView("tabla-profesores", modelo);
+		}
+		else {
+			
+			return new ModelAndView("redirect:/home");
+		}
 	}
 }

@@ -63,7 +63,7 @@
 					<td>${cat.cod}</td>
 					<td>${cat.nombre}</td>
 					<td>${cat.descripcion}</td>
-					<td><img src="images/${cat.imagen}"  id="imagen-principal-curso" width="70"></td>
+					<td><img src="images/${cat.imagen}" width="70"></td>
 					<td>${cat.duracion}</td>
 					<td>${cat.precio}</td>
 					<td class="text-center"><a href="mostrar-catalogo?id=${cat.id}" class="btn btn-info"><span class="glyphicon glyphicon-picture"></span> Mostrar</a></td>

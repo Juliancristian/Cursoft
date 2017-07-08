@@ -110,7 +110,7 @@ public class ControladorLogin {
 	@RequestMapping(path = "/home-usuario", method = RequestMethod.GET)
 	public ModelAndView irAHomeUsuario(HttpServletRequest request) {
 		
-		if(request.getSession().getAttribute("idSesion") != null && request.getSession().getAttribute("nombreSesion") != null){
+		if(request.getSession().getAttribute("idSesion") != null){
 			
 			List<Catalogo> listaCatalogo =  servicioCatalogo.traerListaCatalogo();
 		
@@ -153,7 +153,7 @@ public class ControladorLogin {
 			return new ModelAndView("redirect:/home");
 		}
 		
-		else if(request.getSession().getAttribute("idSesion") != null && request.getSession().getAttribute("nombreSesion") != null){
+		else if(request.getSession().getAttribute("idSesion") != null){
 			
 			// DESTRUYE LA SESION
 			request.getSession().invalidate();

@@ -7,6 +7,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" >
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
+	<script type="text/javascript" src="js/validar.js"></script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
 			
 				<div class="contenedor-login">
 					
-					<form:form action="validar-login" modelAttribute="usuario" method="POST">  
+					<form:form action="validar-login" modelAttribute="usuario" method="POST" onsubmit="return validarLogin()">  
 								
 					<!-- CABECERA -->
 					<h2 class="cabecera-formulario text-center">Cursoft</h2>
@@ -43,13 +44,13 @@
 					<!-- INPUT EMAIL -->
 					<div class="input-group">
 		      			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		      			<form:input path="email" id="email" type="email" class="form-control input-lg"  placeholder="Correo Electronico" />
+		      			<form:input type="text" path="email" id="email"  class="form-control input-lg"  placeholder="Correo Electronico" />
 		    		</div>
 		
 		    		<!-- INPUT CONTRASEÑA -->
 		    		<div class="input-group">
 				      	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-				     	 <form:input path="password" id="password" type="password" class="form-control input-lg" placeholder="Contraseña" />
+				     	 <form:input type="password" path="password" id="pass"  class="form-control input-lg" placeholder="Contraseña" />
 		   		 	</div>
 					<br>
 						

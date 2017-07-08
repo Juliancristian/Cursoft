@@ -166,6 +166,18 @@
   font-weight: 300;
 }
 
+/* SLIDER IMAGENES */
+.sliderImagenes {
+	width: 100%;
+	height: 400px;
+}
+
+/* SEPARAR ESPACIO BOX IMAGEN */
+#ajustarBoxImages {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between; /* Para separar con espacio entre elementos*/
+}
 
 /* CONTENEDOR MARGIN */
 .contenedor-margin{
@@ -177,7 +189,7 @@
 .cabecera-catalogo {
   color: #fff;
   font-size: 30px;
-  margin-top: 95px;
+  margin-top: 45px;
   margin-bottom: 34px;
   font-weight:300;
 }
@@ -345,6 +357,17 @@
 	font-size: 17px;
 	font-weight: bold;
 	color: #21a9af;
+}
+
+.margin-contacto-salirOk {
+	margin-bottom: 155px;
+}
+
+/* PANTALLA MAS GRANDE */
+@media (max-width:730px) {
+	.margin-contacto-salirOk {
+		margin-bottom: 182px;
+	}
 }
 
 .margin-curso-salir {

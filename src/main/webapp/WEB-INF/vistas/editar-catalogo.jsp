@@ -8,6 +8,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" >
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
+	<script type="text/javascript" src="js/validar.js"></script>
 </head>
 <body>
 
@@ -34,27 +35,27 @@
         <!-- CONTENEDOR --> 	    
 		<div class="container">
 	
-			<form:form action="editar-catalogoOk" modelAttribute="catalogo" method="POST" >
+			<form:form action="editar-catalogoOk" modelAttribute="catalogo" method="POST" onsubmit="return validarFormCatalogo()">
 			
 			<!-- CONTENEDOR FORMULARIO COLUMN -->
 			<div id="contenedor-formulario" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 			
 			<!-- CABECERA -->
-			<h2 class="text-center">Editar</h2>
+			<h2 class="text-center">Editar Catálogo</h2>
 			
 			<!-- INPUT ID OCULTO -->		
-			<form:input name="id" id="id" type="hidden" path="id" value="${id}" />
+			<form:input type="hidden" name="id" id="id"  path="id" value="${id}" />
 			
 			<!-- INPUT CODIGO -->
 			<div class="form-group">	
 				<label for="cod">Código</label>
-				<form:input name="cod" id="cod" class ="form-control" type="text" path="cod" placeholder="Ingresar codigo" value="${cod}"/>
+				<form:input type="text" name="cod" id="cod" class ="form-control"  path="cod" placeholder="Ingresar codigo" value="${cod}"/>
 			</div>
 			
 			<!-- INPUT NOMBRE -->
 			<div class="form-group">	
 				<label for="nombre">Nombre</label>
-				<form:input name="nombre" id="nombre" class ="form-control" type="text" path="nombre" placeholder="Ingresar Nombre" value="${nombre}"/>
+				<form:input type="text" name="nombre" id="nombre" class ="form-control"  path="nombre" placeholder="Ingresar Nombre" value="${nombre}"/>
 			</div>
 			
 			<!-- TEXTAREA DESCRIPCION -->
@@ -68,7 +69,7 @@
 			
 			<div class="form-group">	
 				<label for="imagen">Imagen</label>
-				<form:input name="imagen" id="imagen" type="file" path="imagen" />
+				<form:input type="file" name="imagen" id="imagen"  path="imagen" />
 			</div>
 			
 			<!-- INPUT DURACION -->
@@ -77,7 +78,6 @@
 				<form:select path="duracion" id="duracion" class ="form-control">
 					<option value="${duracion}">${duracion}</option>
 					
-					<option value="">Seleccionar</option>
 					<option value="1 Mes">1 Mes</option>
 					<option value="2 Meses">2 Meses</option>
 					<option value="3 Meses">3 Meses</option>
@@ -96,7 +96,7 @@
 			<!-- INPUT PRECIO -->
 			<div class="form-group">	
 				<label for="precio">Precio</label>
-				<form:input name="precio" id="precio" class ="form-control" type="text" path="precio" placeholder="Ingresar Precio" value="${precio}"/>
+				<form:input type="text" name="precio" id="precio" class ="form-control"  path="precio" placeholder="Ingresar Precio" value="${precio}"/>
 			</div>
 			
 			<!-- BOTON GUARDAR -->

@@ -3,6 +3,7 @@ package ar.edu.unlam.tallerweb1.controladores;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -48,15 +49,22 @@ public class ControladorUsuario {
 		
 		// TABLA USUARIOS
 		@RequestMapping("/tabla-usuarios")
-		public ModelAndView listarUsuarios(){
-			
-			List<Usuario> listaUsuario = servicioUsuario.traerListaUsuarios();
-			
-			// VISTA EN PANTALLA
-			ModelMap modelo = new ModelMap();	
-
-			modelo.put("usuarios", listaUsuario);	
-			return new ModelAndView("tabla-usuarios", modelo);
+		public ModelAndView listarUsuarios(HttpServletRequest request){
+		
+			if(request.getSession().getAttribute("idAdmin") != null){
+				
+				List<Usuario> listaUsuario = servicioUsuario.traerListaUsuarios();
+				
+				// VISTA EN PANTALLA
+				ModelMap modelo = new ModelMap();	
+	
+				modelo.put("usuarios", listaUsuario);	
+				return new ModelAndView("tabla-usuarios", modelo);
+			}
+			else {
+				
+				return new ModelAndView("redirect:/home");
+			}
 		}
 						
 	}

@@ -8,6 +8,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" >
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
+	<script type="text/javascript" src="js/validar.js"></script>
 </head>
 <body>
 
@@ -34,42 +35,42 @@
         <!-- CONTENEDOR --> 	    
 		<div class="container">
 	
-			<form:form action="altaProfesor" modelAttribute="profesor" method="POST" >
+			<form:form action="altaProfesor" modelAttribute="profesor" method="POST" onsubmit="return validarFormProfesor()">
 			
 			<!-- CONTENEDOR FORMULARIO COLUMN -->
 			<div id="contenedor-formulario-profesor" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 			
 			<!-- CABECERA -->
-			<h2 class="text-center">Nuevo</h2>
+			<h2 class="text-center">Alta Profesor</h2>
 			
 			<!-- INPUT DNI -->
 			<div class="form-group">	
 				<label for="dni">Dni</label>
-				<form:input name="dni" id="dni" class ="form-control" type="text" path="dni" placeholder="Ingresar Dni" />
+				<form:input  type="text" name="dni" id="dni" class ="form-control" path="dni" placeholder="Ingresar Dni" />
 			</div>
 			
 			<!-- INPUT NOMBRE -->
 			<div class="form-group">	
 				<label for="nombre">Nombre</label>
-				<form:input name="nombre" id="nombre" class ="form-control" type="text" path="nombre" placeholder="Ingresar Nombre" />
+				<form:input type="text" name="nombre" id="nombre" class ="form-control" path="nombre" placeholder="Ingresar Nombre" />
 			</div>
 			
 			<!-- INPUT APELLIDO -->
 			<div class="form-group">	
 				<label for="apellido">Apellido</label>
-				<form:input name="apellido" id="apellido" class ="form-control" type="text" path="apellido" placeholder="Ingresar Apellido" />
+				<form:input type="text" name="apellido" id="apellido" class ="form-control" path="apellido" placeholder="Ingresar Apellido" />
 			</div>
 						
 			<!-- INPUT TELEFONO -->
 			<div class="form-group">	
 				<label for="telefono">Telefono</label>
-				<form:input name="telefono" id="telefono" class ="form-control" type="text" path="telefono" placeholder="Ingresar Telefono" />
+				<form:input type="text" name="telefono" id="telefono" class ="form-control" path="telefono" placeholder="Ingresar Telefono" />
 			</div>
 			
 			<!-- INPUT ESPECIALIDAD -->
 			<div class="form-group">	
 				<label for="especialidad">Especialidad</label>
-				<form:input name="especialidad" id="especialidad" class ="form-control" type="text" path="especialidad" placeholder="Ingresar Especialidad" />
+				<form:input type="text" name="especialidad" id="especialidad" class ="form-control" path="especialidad" placeholder="Ingresar Especialidad" />
 			</div>
 			
 			<!-- BOTON GUARDAR -->
